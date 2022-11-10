@@ -54,6 +54,9 @@ public class Account {
 		return name + "\n" + favMusic + "\n" + myMusic;
 	}
 	
+	/**
+	 * 
+	 */
 	public boolean equals(Object o) {
 		if(o == this) return true;
 		if(o == null) return false;
@@ -64,6 +67,9 @@ public class Account {
 		return false;
 	}
 	
+	/**
+	 * 
+	 */
 	public int hashCode() {
 		return Objects.hash(name, myMusic, favMusic);
 	}

@@ -16,6 +16,14 @@ public class AccountDB {
 		}
 	}
 	
+	/**
+	 * 新たなAccountを作成しDBに登録するメソッド
+	 * 同じ名前が存在する際にはfalse
+	 * 
+	 * @param name 新しく作成するAccountのString型の名前
+	 * @param myMusic 一番の音楽を表すMusic型の値
+	 * @return アカウントが作成できたかを表すboolean型の値
+	 */
 	public static boolean insertData(String name, Music myMusic) {
 		if(existName(name)) {
         	System.out.println(name + " is already exist");
@@ -90,8 +98,8 @@ public class AccountDB {
 	/**
 	 * 名前のアカウントを探すメソッド
 	 * 
-	 * @param name
-	 * @return
+	 * @param name　検索するAccountの名前を表すString型の値
+	 * @return 検索結果をあらwすAccount型のArrayList
 	 */
 	public static ArrayList<Account> searchAccount(String name) {
 		ArrayList<Account> res = new ArrayList<>();
@@ -135,8 +143,8 @@ public class AccountDB {
 	/**
 	 * 名前のアカウントが存在するかを確認するメソッド
 	 * 
-	 * @param name
-	 * @return
+	 * @param name 存在を確認するAccountの名前を表すString型の値
+	 * @return　存在するかを表すboolean型の値
 	 */
 	public static boolean existName(String name) {
 		try {
@@ -163,7 +171,8 @@ public class AccountDB {
 	
 	/**
 	 * アカウントを削除するメソッド
-	 * @param name
+	 * 
+	 * @param name　削除するAccountの名前を表すString型の値
 	 */
 	public static void deleteAccount(String name) {
 		try {
@@ -195,8 +204,8 @@ public class AccountDB {
 	/**
 	 * お気に入りの音楽を変更するメソッド
 	 * 
-	 * @param name
-	 * @param favMusic
+	 * @param name　変更するAccountの名前を表すString型の値
+	 * @param favMusic　お気に入りの音楽を保存したMusic型のHashSet
 	 */
 	public static void updateFavMusic(String name, HashSet<Music> favMusic) {
 		try {
@@ -234,8 +243,8 @@ public class AccountDB {
 	/**
 	 * 一番の音楽を変更するメソッド
 	 * 
-	 * @param name
-	 * @param myMusic
+	 * @param name 変更するAccountの名前を表すString型の値
+	 * @param myMusic 変更する一番の音楽を表すMusic型の値
 	 */
 	public static void updateMyMusic(String name, Music myMusic) {
 		try {
